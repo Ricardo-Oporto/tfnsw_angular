@@ -1,4 +1,5 @@
-import { BusSchedule } from './shared/models';
+import { Constants } from './shared/constants';
+import { Schedule } from './shared/models';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './services/data.service';
 
@@ -8,13 +9,15 @@ import { DataService } from './services/data.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'tfnsw';
+  title = Constants.APP_TITLE;
+
+  busRouteData: Schedule[];
 
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.dataService.getBusRouteData().subscribe((data: BusSchedule[]) => {
-      const x = data;
+    this.dataService.getBusRouteData().subscribe((data: Schedule[]) => {
+      this.busRouteData = data;
     });
   }
 }
