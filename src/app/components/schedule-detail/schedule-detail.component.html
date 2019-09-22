@@ -1,29 +1,46 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-9">
       <h2>{{schedule.organisation}} - {{schedule.date}}</h2>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-3">
       <button (click)="showDetail=!showDetail" class="btn glyphicon"
         [ngClass]="{'glyphicon-chevron-up': showDetail, 'glyphicon-chevron-down': !showDetail}"></button>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
-      <table *ngIf="showDetail">
-        <tr>
-          <th>Bus ID</th>
-          <th>Route Variant</th>
-          <th>Status</th>
-        </tr>
-        <tr *ngFor="let bus of schedule.busData">
-          <td>{{bus.busId}}</td>
-          <td>{{bus.routeVariant}}</td>
-          <td>{{bus.deviationFromTimetable}}</td>
-        </tr>
-      </table>
+      <div *ngIf="showDetail">
+        <div class="row">
+          <div class="col-md-12">
+            <table>
+              <tr>
+                <th>Bus ID</th>
+                <th>Route Variant</th>
+                <th>Status</th>
+              </tr>
+              <tr *ngFor="let bus of schedule.busData">
+                <td>{{bus.busId}}</td>
+                <td>{{bus.routeVariant}}</td>
+                <td>{{bus.deviationFromTimetable}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <textarea placeholder="Enter notes here"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <button class="btn btn-primary save">Save Notes</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
 
 
 

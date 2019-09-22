@@ -1,5 +1,6 @@
-.container {
+.container-fluid {
   max-width: 800px;
+  padding: 0px;
 }
 
 h2 {
@@ -13,4 +14,12 @@ table {
 
 button {
   float: right;
+
+  &.save {
+    float: left;
+  }
+}
+
+textarea {
+  width: 100%;
 }
