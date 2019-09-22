@@ -10,6 +10,7 @@ export class ScheduleDetailComponent implements OnInit {
   @Input() schedule: Schedule;
 
   public showDetail = false;
+  public note: string;
 
   constructor() {}
 
