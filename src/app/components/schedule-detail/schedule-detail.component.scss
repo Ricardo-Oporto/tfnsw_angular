@@ -3,6 +3,19 @@
   padding: 0px;
 }
 
+th {
+  background-color: aqua;
+  padding: 10px 0 10px 0;
+}
+
+tr {
+  border-top: 1px solid grey;
+}
+
+td {
+  padding: 10px 0 10px 0;
+}
+
 .row {
   margin-bottom: 10px;
 }
