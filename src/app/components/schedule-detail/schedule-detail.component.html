@@ -1,20 +1,32 @@
 <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>{{schedule.organisation}} - {{schedule.date}}</h2>
+    </div>
+    <div class="col-md-6">
+      <button (click)="showDetail=!showDetail" class="btn glyphicon"
+        [ngClass]="{'glyphicon-chevron-up': showDetail, 'glyphicon-chevron-down': !showDetail}"></button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table *ngIf="showDetail">
+        <tr>
+          <th>Bus ID</th>
+          <th>Route Variant</th>
+          <th>Status</th>
+        </tr>
+        <tr *ngFor="let bus of schedule.busData">
+          <td>{{bus.busId}}</td>
+          <td>{{bus.routeVariant}}</td>
+          <td>{{bus.deviationFromTimetable}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
 
-  <h2>{{schedule.organisation}} - {{schedule.date}}</h2> <button class="btn glyphicon glyphicon-chevron-up"
-    style="float:right"></button>
 
 
-  <table style="width:100%">
-    <tr>
-      <th>Bus ID</th>
-      <th>Route Variant</th>
-      <th>Status</th>
-    </tr>
-    <tr *ngFor="let bus of schedule.busData">
-      <td>{{bus.busId}}</td>
-      <td>{{bus.routeVariant}}</td>
-      <td>{{bus.deviationFromTimetable}}</td>
-    </tr>
-  </table>
+
 
 </div>

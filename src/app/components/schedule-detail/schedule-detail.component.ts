@@ -9,6 +9,8 @@ import { Schedule } from 'src/app/shared/models';
 export class ScheduleDetailComponent implements OnInit {
   @Input() schedule: Schedule;
 
+  public showDetail = false;
+
   constructor() {}
 
   ngOnInit() {
