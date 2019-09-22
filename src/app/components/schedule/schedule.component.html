@@ -1,0 +1,8 @@
+<div>
+  <h2>Bus Reports</h2>
+</div>
+<ul>
+  <li *ngFor="let schedule of scheduleList">
+    <app-schedule-detail [schedule]="schedule"></app-schedule-detail>
+  </li>
+</ul>
