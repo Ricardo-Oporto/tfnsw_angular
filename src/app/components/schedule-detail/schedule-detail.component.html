@@ -22,18 +22,15 @@
               <tr *ngFor="let bus of schedule.busData">
                 <td>{{bus.busId}}</td>
                 <td>
-                  <span *ngIf="bus.routeVariant!=='UNKNOWN' else unknown">
-                    <b>{{bus.routeVariant.slice( 0, 3 )}}</b> {{bus.routeVariant.slice( 4, 7 )}}
-                  </span>
-                  <ng-template #unknown>
-
+                  <span *ngIf="bus.routeVariant==='UNKNOWN' else routeVariant">
                     {{ bus.routeVariant}}
-
+                  </span>
+                  <ng-template #routeVariant>
+                    <b>{{bus.routeVariant.slice( 0, 3 )}}</b> {{bus.routeVariant.slice( 4, 7 )}}
                   </ng-template>
                 </td>
                 <td>
                   <span appRunningTime [time]="bus.deviationFromTimetable"></span>
-
                 </td>
               </tr>
             </table>
