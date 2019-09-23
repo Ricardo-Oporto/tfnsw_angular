@@ -41,6 +41,16 @@ describe('ScheduleDetailComponent', () => {
     expect(component.showDetail).not.toEqual(showTest);
   });
 
+  it('should render the table rows', async () => {
+    const button = fixture.debugElement.query(By.css('button.toggle-detail'))
+      .nativeElement;
+    button.click();
+    fixture.detectChanges();
+    expect(
+      fixture.debugElement.queryAll(By.css('.bus-data-row')).length
+    ).toEqual(component.schedule.busData.length);
+  });
+
   it('should add a note to the note list', () => {
     component.addNote(testData);
     expect(component.noteList[0]).toEqual(testData);
