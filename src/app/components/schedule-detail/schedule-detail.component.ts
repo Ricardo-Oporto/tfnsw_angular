@@ -30,7 +30,7 @@ export class ScheduleDetailComponent implements OnInit {
       return;
     }
 
-    this.noteList.push(this.note);
+    this.noteList.push(note);
     this.note = null;
   };
 }

@@ -25,4 +25,9 @@ describe('ScheduleDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should add a note to the note list', () => {
+    component.addNote('test');
+    expect(component.noteList[0]).toEqual('test');
+  });
 });
