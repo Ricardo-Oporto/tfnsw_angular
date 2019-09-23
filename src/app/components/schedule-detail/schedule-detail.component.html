@@ -19,7 +19,7 @@
                 <th>Route Variant</th>
                 <th>Status</th>
               </tr>
-              <tr *ngFor="let bus of schedule.busData">
+              <tr *ngFor="let bus of schedule.busData" class="bus-data-row">
                 <td>{{bus.busId}}</td>
                 <td>
                   <span *ngIf="bus.routeVariant==='UNKNOWN' else routeVariant">
