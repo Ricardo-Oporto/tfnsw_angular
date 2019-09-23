@@ -34,6 +34,9 @@ export class RunningTimeDirective implements AfterViewInit {
 
   setStatus = (status: Status) => {
     this.elRef.nativeElement.innerHTML = status;
-    this.renderer.addClass(this.elRef.nativeElement, status.replace(' ', ''));
+    this.renderer.addClass(
+      this.elRef.nativeElement,
+      status.replace(' ', '').toLowerCase()
+    );
   };
 }

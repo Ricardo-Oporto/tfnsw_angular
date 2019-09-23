@@ -32,7 +32,10 @@ table {
 }
 
 button {
-  float: right;
+
+  &.toggle-detail {
+    float: right;
+  }
 
   &.save {
     float: left;
@@ -43,18 +46,18 @@ textarea {
   width: 100%;
 }
 
-.Early {
+.early {
   color: $red;
 }
 
-.Ontime {
+.ontime {
   color: $green;
 }
 
-.Late {
+.late {
   color: $blue;
 }
 
-.UNKNOWN {
+.unknown {
   color: $black;
 }
