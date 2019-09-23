@@ -11,7 +11,7 @@ import {
   selector: '[appRunningTime]'
 })
 export class RunningTimeDirective implements AfterViewInit {
-  @Input('time') time: number;
+  @Input() time: number;
 
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
