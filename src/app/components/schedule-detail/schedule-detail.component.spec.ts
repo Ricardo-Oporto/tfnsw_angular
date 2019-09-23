@@ -8,6 +8,7 @@ import { By } from '@angular/platform-browser';
 describe('ScheduleDetailComponent', () => {
   let component: ScheduleDetailComponent;
   let fixture: ComponentFixture<ScheduleDetailComponent>;
+  const testData = 'test';
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -38,7 +39,7 @@ describe('ScheduleDetailComponent', () => {
   });
 
   it('should add a note to the note list', () => {
-    component.addNote('test');
-    expect(component.noteList[0]).toEqual('test');
+    component.addNote(testData);
+    expect(component.noteList[0]).toEqual(testData);
   });
 });

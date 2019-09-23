@@ -12,7 +12,7 @@ import { Schedule } from 'src/app/shared/models';
   styleUrls: ['./schedule-detail.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ScheduleDetailComponent implements OnInit {
+export class ScheduleDetailComponent {
   @Input() schedule: Schedule;
 
   public showDetail = false;
@@ -20,10 +20,6 @@ export class ScheduleDetailComponent implements OnInit {
   public noteList = [];
 
   constructor() {}
-
-  ngOnInit() {
-    const x = '';
-  }
 
   addNote = note => {
     if (!note) {
