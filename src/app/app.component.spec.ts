@@ -5,17 +5,18 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { of } from 'rxjs';
+import response from '../assets/bus-services-data.json';
 
 describe('AppComponent', () => {
   let app: AppComponent;
 
   class MockData {
     getBusRouteData() {
-      return of(data);
+      return of(response.data);
     }
   }
 
-  const data = [];
+  const data = response.data;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
